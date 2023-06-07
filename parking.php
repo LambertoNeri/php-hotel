@@ -1,5 +1,8 @@
 <?php
+    $selectOption = $_GET['parking'];
+    var_dump($selectOption);
 
+     
     $hotels = [
 
         [
@@ -62,9 +65,6 @@
             <option value="1">Pincolo</option>
         </select>
         <button type="submit">Filtrami tutto</button>
-        <button type="reset">Resetta i filtri zozzone!!</button>
-
-        
     </form>
 
 
