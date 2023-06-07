@@ -117,7 +117,7 @@
                         } else {
                             $key + 1
                         };
-                    } ?>
+                    }; ?>
                 </tbody>
             </table><?php
         } ?>
