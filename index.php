@@ -1,5 +1,7 @@
 <?php
-
+    
+    $selectOption = $_GET['parking'];
+    var_dump($selectOption);
     $hotels = [
 
         [
@@ -55,6 +57,17 @@
     
 </head>
 <body>
+    <form action="#">
+        <label for="parking">Voi parcheggià?</label>
+        <select id="parking" name="parking">                      
+            <option value="0">Si</option>
+            <option value="1">Pincolo</option>
+        </select>
+        <button type="submit">Filtrami tutto</button>
+        <button type="reset">Resetta i filtri zozzone!!</button>
+
+        
+    </form>
 
 
 <table class="table">
