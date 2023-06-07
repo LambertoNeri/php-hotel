@@ -63,8 +63,6 @@
         </select>
         <button type="submit">Filtrami tutto</button>
         <button type="reset">Resetta i filtri zozzone!!</button>
-
-        
     </form>
 
 

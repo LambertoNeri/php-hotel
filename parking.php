@@ -67,40 +67,61 @@
         <button type="submit">Filtrami tutto</button>
     </form>
 
-
-<table class="table">
-    <thead>
-        <tr>
-        <th scope="col">Nome Hotel</th>
-        <th scope="col">Descrizione</th>
-        <th scope="col">Parcheggio</th>
-        <th scope="col">Stelle</th>
-        <th scope="col">Distanza dal centro</th>
-        </tr>
-    </thead>
-    <tbody>
     <?php
-        foreach ($hotels as $key => $value){ ?> 
-        <tr>
-            <th scope="row"><?= $hotels[$key]['name']?></th>
-            <td><?= $hotels[$key]['description']?></td>
-            <td>
-                <?php 
-                    if ($hotels[$key]['parking'] == true){ ?>
-                        SI <?php
-                    } else { ?>
-                        NO <?php
-                    };
-                ?>
-            </td>
-            <td><?= $hotels[$key]['vote']?></td>
-            <td><?= $hotels[$key]['distance_to_center']?></td>
-        </tr><?php 
-        } ?>   
-   
-    
-  </tbody>
-</table>
+        if($selectOption == 0){
+            ?> <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Nome Hotel</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Parcheggio</th>
+                    <th scope="col">Stelle</th>
+                    <th scope="col">Distanza dal centro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                    foreach ($hotels as $key => $value){ 
+                        if( $hotels[$key]['parking'] == true & $selectOption == 0 ) { ?>
+                            <tr>
+                                <th scope="row"><?= $hotels[$key]['name']?></th>
+                                <td><?= $hotels[$key]['description']?></td>
+                                <td>
+                                    <?php 
+                                        if ($hotels[$key]['parking'] == true){ ?>
+                                        SI <?php
+                                        } else { ?>
+                                        NO <?php
+                                        };
+                                    ?>
+                                </td>
+                                <td><?= $hotels[$key]['vote']?></td>
+                                <td><?= $hotels[$key]['distance_to_center']?></td>
+                            </tr><?php
+                        } else if ($hotels[$key]['parking'] == false & $selectOption == 1) { ?>
+                            <tr>
+                                <th scope="row"><?= $hotels[$key]['name']?></th>
+                                <td><?= $hotels[$key]['description']?></td>
+                                <td>
+                                    <?php 
+                                        if ($hotels[$key]['parking'] == true){ ?>
+                                        SI <?php
+                                        } else { ?>
+                                        NO <?php
+                                        };
+                                    ?>
+                                </td>
+                                <td><?= $hotels[$key]['vote']?></td>
+                                <td><?= $hotels[$key]['distance_to_center']?></td>
+                            </tr><?php  
+                        } else {
+                            $key + 1
+                        ?>
+                </tbody>
+            </table><?php
+        }}} ?>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
