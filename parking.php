@@ -68,8 +68,8 @@
     </form>
 
     <?php
-        if($selectOption == 0){
-            ?> <table class="table">
+        if($selectOption == 0){?>
+            <table class="table">
                 <thead>
                     <tr>
                     <th scope="col">Nome Hotel</th>
@@ -118,7 +118,7 @@
                             $key + 1
                         };
                     } ?>
-            </tbody>
+                </tbody>
             </table><?php
         } ?>
 
