@@ -1,10 +1,6 @@
 <?php
     $selectParking = $_GET['parking'];
     $selectVote = $_GET['vote'];
-    var_dump($selectParking);
-    var_dump($selectVote);
-
-     
     $hotels = [
 
         [
