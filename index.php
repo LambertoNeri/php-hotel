@@ -16,7 +16,7 @@
             'vote' => 2,
             'distance_to_center' => 2
         ],
-        [
+        [+
             'name' => 'Hotel Rivamare',
             'description' => 'Hotel Rivamare Descrizione',
             'parking' => false,
@@ -51,8 +51,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form action="parking.php">
@@ -61,6 +60,14 @@
             <option value="0">select one</option>                     
             <option value="1">Si</option>
             <option value="1">No</option>
+        </select>
+        <select id="vote" name="vote"> 
+            <option value="0">select one</option>                     
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
         </select>
         <button type="submit">Filtrami tutto</button>
     </form>

@@ -1,0 +1,19 @@
+.voterelli{
+    display: flex;
+    gap: 5rem;
+    padding-left: 2rem;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+button{
+    justify-self: end;
+    border-color: blue;
+    border-radius: 5px;
+    margin-left: 3rem;
+}

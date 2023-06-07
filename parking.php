@@ -1,6 +1,8 @@
 <?php
-    $selectOption = $_GET['parking'];
-    var_dump($selectOption);
+    $selectParking = $_GET['parking'];
+    $selectVote = $_GET['vote'];
+    var_dump($selectParking);
+    var_dump($selectVote);
 
      
     $hotels = [
@@ -54,19 +56,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="parking.php">
-        <label for="parking">Area Parcheggio</label>
-        <select id="parking" name="parking"> 
-            <option value="0">select one</option>                     
-            <option value="1">Si</option>
-            <option value="2">No</option>
-        </select>
-        <button type="submit">Filtrami tutto</button>
-    </form>
+    <div class="voterelli">
+        <form action="parking.php">
+            <div>
+                <label for="parking">Area Parcheggio</label>
+                <select id="parking" name="parking"> 
+                    <option value="0">select one</option>                     
+                    <option value="1">Si</option>
+                    <option value="2">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="vote">Voto Hotel</label>
+                <select id="vote" name="vote"> 
+                    <option value="0">select one</option>                     
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            
+            <button type="submit">Filtrami tutto</button>
+        </form>
+    </div>
+    
         <table class="table">
             <thead>
                 <tr>
@@ -80,7 +98,7 @@
             <tbody>
             <?php
                 foreach ($hotels as $key => $value){ 
-                    if( $hotels[$key]['parking'] == true && $selectOption == 1 ) { ?>
+                    if( $hotels[$key]['parking'] == true && $selectParking == 1 && $hotels[$key]['vote'] >= $selectVote) { ?>
                         <tr>
                             <th scope="row"><?= $hotels[$key]['name']?></th>
                             <td><?= $hotels[$key]['description']?></td>
@@ -96,7 +114,7 @@
                             <td><?= $hotels[$key]['vote']?></td>
                             <td><?= $hotels[$key]['distance_to_center']?></td>
                         </tr><?php
-                    } else if ($hotels[$key]['parking'] == false && $selectOption == 2) { ?>
+                    } else if ($hotels[$key]['parking'] == false && $selectParking == 2 && $hotels[$key]['vote'] >= $selectVote) { ?>
                         <tr>
                             <th scope="row"><?= $hotels[$key]['name']?></th>
                             <td><?= $hotels[$key]['description']?></td>
@@ -112,7 +130,7 @@
                             <td><?= $hotels[$key]['vote']?></td>
                             <td><?= $hotels[$key]['distance_to_center']?></td>
                         </tr><?php  
-                    } else if ( $selectOption == 0 ) { ?>
+                    } else if ( $selectParking == 0 && $hotels[$key]['vote'] >= $selectVote ) { ?>
                         <tr>
                             <th scope="row"><?= $hotels[$key]['name']?></th>
                             <td><?= $hotels[$key]['description']?></td>
@@ -128,7 +146,7 @@
                             <td><?= $hotels[$key]['vote']?></td>
                             <td><?= $hotels[$key]['distance_to_center']?></td>
                         </tr><?php  
-                    }
+                    } 
                 } ?>
             </tbody>
         </table>
