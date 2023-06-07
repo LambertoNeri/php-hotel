@@ -16,7 +16,7 @@
             'vote' => 2,
             'distance_to_center' => 2
         ],
-        [+
+        [
             'name' => 'Hotel Rivamare',
             'description' => 'Hotel Rivamare Descrizione',
             'parking' => false,
