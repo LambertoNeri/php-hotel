@@ -98,7 +98,7 @@
                                 <td><?= $hotels[$key]['vote']?></td>
                                 <td><?= $hotels[$key]['distance_to_center']?></td>
                             </tr><?php
-                        } else if ($hotels[$key]['parking'] == false & $selectOption == 1) { ?>
+                        } else if ($hotels[$key]['parking'] === false & $selectOption == 1) { ?>
                             <tr>
                                 <th scope="row"><?= $hotels[$key]['name']?></th>
                                 <td><?= $hotels[$key]['description']?></td>
@@ -114,13 +114,11 @@
                                 <td><?= $hotels[$key]['vote']?></td>
                                 <td><?= $hotels[$key]['distance_to_center']?></td>
                             </tr><?php  
-                        } else {
-                            $key + 1
-                        };
-                    }; ?>
+                        }
+                    } ?>
                 </tbody>
             </table><?php
-        } ?>
+        }; ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
