@@ -82,7 +82,7 @@
                 <tbody>
                 <?php
                     foreach ($hotels as $key => $value){ 
-                        if( $hotels[$key]['parking'] == true & $selectOption == 0 ) { ?>
+                        if( $hotels[$key]['parking'] == true && $selectOption == 0 ) { ?>
                             <tr>
                                 <th scope="row"><?= $hotels[$key]['name']?></th>
                                 <td><?= $hotels[$key]['description']?></td>
@@ -98,7 +98,7 @@
                                 <td><?= $hotels[$key]['vote']?></td>
                                 <td><?= $hotels[$key]['distance_to_center']?></td>
                             </tr><?php
-                        } else if ($hotels[$key]['parking'] === false & $selectOption == 1) { ?>
+                        } else if ($hotels[$key]['parking'] == false && $selectOption == 1) { ?>
                             <tr>
                                 <th scope="row"><?= $hotels[$key]['name']?></th>
                                 <td><?= $hotels[$key]['description']?></td>
